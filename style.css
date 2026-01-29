@@ -1801,6 +1801,86 @@ body.light-theme .moon {
 }
 
 /* =========================
+   ABOUT ME SECTION
+========================= */
+.about-container {
+  padding: 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
+.about-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.highlight {
+  padding: 25px;
+  border-radius: var(--border-radius);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-light);
+  transition: var(--transition-smooth);
+}
+
+.highlight i {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  margin-bottom: 10px;
+}
+
+.highlight h4 {
+  margin-bottom: 8px;
+}
+
+.highlight:hover {
+  transform: translateY(-5px);
+}
+
+/* =========================
+   WHY CHOOSE ME SECTION
+========================= */
+.why-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.why-card {
+  padding: 35px;
+  text-align: center;
+  border-radius: var(--border-radius);
+}
+
+.why-card i {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 15px;  
+}
+
+.why-card h3 {
+  margin-bottom: 10px;
+}
+
+.why-card p {
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* =========================
    FOOTER
 ========================= */
 .footer {
