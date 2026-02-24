@@ -137,6 +137,66 @@ function initializeNavigation() {
 }
 
 // =========================
+// ADVANCED SECTION ANIMATION
+// =========================
+
+function initializeAdvancedProfile() {
+
+  const bars = document.querySelectorAll('.metric-progress');
+  const wpmCircle = document.querySelector('.progress-wpm');
+  const accCircle = document.querySelector('.progress-accuracy');
+  const wpmCounter = document.getElementById('wpmCounter');
+  const accCounter = document.getElementById('accuracyCounter');
+
+  const radius = 60;
+  const circumference = 2 * Math.PI * radius;
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+
+        // Animate bars
+        bars.forEach(bar => {
+          const value = bar.getAttribute('data-progress');
+          bar.style.width = value + "%";
+        });
+
+        // Animate WPM
+        let wpm = 0;
+        const wpmTarget = 45;
+        const wpmOffset = circumference - (45 / 100) * circumference;
+        wpmCircle.style.strokeDashoffset = wpmOffset;
+
+        const wpmInterval = setInterval(() => {
+          wpm++;
+          wpmCounter.textContent = wpm;
+          if (wpm >= wpmTarget) clearInterval(wpmInterval);
+        }, 30);
+
+        // Animate Accuracy
+        let acc = 0;
+        const accTarget = 97;
+        const accOffset = circumference - (97 / 100) * circumference;
+        accCircle.style.strokeDashoffset = accOffset;
+
+        const accInterval = setInterval(() => {
+          acc++;
+          accCounter.textContent = acc;
+          if (acc >= accTarget) clearInterval(accInterval);
+        }, 20);
+
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  const section = document.getElementById('advanced-profile');
+  if (section) observer.observe(section);
+}
+
+initializeAdvancedProfile();
+
+// =========================
 // SMOOTH SCROLLING
 // =========================
 function initializeSmoothScrolling() {
@@ -330,6 +390,7 @@ function initializeTypewriter() {
     'Software Engineer',
     'Full-Stack Developer',
     'DSA Expert',
+    'Software Devloper',
     'Problem Solver',
     'Algorithm Specialist'
   ];
@@ -373,6 +434,8 @@ function initializeTypewriter() {
   // Start typewriter effect after a delay
   setTimeout(typeWriter, 1000);
 }
+
+
 
 // =========================
 // PARTICLES ANIMATION
