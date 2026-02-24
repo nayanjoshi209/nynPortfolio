@@ -1402,6 +1402,143 @@ body.light-theme .moon {
   color: var(--accent-color);
 }
 
+
+/* =========================
+   Beyond Engineering
+========================= */
+/* =========================
+   ADVANCED PROFILE SECTION
+========================= */
+
+.advanced-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 35px;
+}
+
+.advanced-card {
+  padding: 40px;
+  border-radius: var(--border-radius);
+  transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.advanced-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 30px 70px rgba(255,191,0,0.25);
+}
+
+.advanced-icon {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.advanced-description {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.advanced-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.advanced-skills span {
+  padding: 8px 14px;
+  border-radius: 20px;
+  background: rgba(255,191,0,0.1);
+  border: 1px solid rgba(255,191,0,0.3);
+  font-size: 0.85rem;
+  transition: 0.3s ease;
+}
+
+.advanced-skills span:hover {
+  background: var(--accent-color);
+  color: #000;
+  transform: translateY(-3px);
+}
+
+/* Progress Bars */
+.metric-bar {
+  height: 10px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.metric-progress {
+  height: 100%;
+  width: 0;
+  background: var(--gradient-primary);
+  transition: width 2s ease;
+}
+
+/* Typing Meters */
+.typing-metrics-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 25px 0;
+  flex-wrap: wrap;
+}
+
+.typing-meter {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.typing-meter svg {
+  width: 150px;
+  height: 150px;
+  transform: rotate(-90deg);
+}
+
+.typing-meter circle {
+  fill: none;
+  stroke-width: 12;
+  stroke: rgba(255,255,255,0.1);
+  stroke-linecap: round;
+}
+
+.progress-wpm,
+.progress-accuracy {
+  stroke: var(--accent-color);
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+  transition: stroke-dashoffset 2s ease;
+}
+
+.meter-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.meter-text span {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .advanced-container { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .advanced-container { grid-template-columns: 1fr; }
+  .typing-meter { width: 120px; height: 120px; }
+  .typing-meter svg { width: 120px; height: 120px; }
+}
+
 /* =========================
    ACHIEVEMENTS SECTION
 ========================= */
@@ -1842,6 +1979,8 @@ body.light-theme .moon {
 .highlight:hover {
   transform: translateY(-5px);
 }
+
+
 
 /* =========================
    WHY CHOOSE ME SECTION
