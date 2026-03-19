@@ -193,6 +193,157 @@ html {
 }
 
 /* =========================
+   FORCE MOBILE SIDEBAR FIX
+========================= */
+@media (max-width: 768px) {
+
+  /* RESET SIDEBAR COMPLETELY */
+  .sidebar {
+    position: relative !important;
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    padding: 15px !important;
+    text-align: center !important;
+    overflow: hidden !important;
+  }
+
+  /* REMOVE DESKTOP OFFSET */
+  .main {
+    margin-left: 0 !important;
+    width: 100% !important;
+  }
+
+  /* PROFILE IMAGE */
+  .profile-image-wrapper {
+    width: 100px !important;
+    height: 100px !important;
+    margin: 0 auto 10px !important;
+  }
+
+  /* NAME FIX */
+  .profile-info h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.2 !important;
+    word-break: break-word !important;
+  }
+
+  .profile-title {
+    font-size: 0.85rem !important;
+  }
+
+  /* BADGES FIX */
+  .profile-badges {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 5px !important;
+  }
+
+  .badge {
+    font-size: 0.7rem !important;
+    padding: 4px 8px !important;
+  }
+
+  /* CONTACT FIX */
+  .contact-summary {
+    margin: 15px 0 !important;
+  }
+
+  .contact-item {
+    display: flex !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    font-size: 0.8rem !important;
+    flex-wrap: wrap !important;
+    text-align: center !important;
+  }
+
+  .contact-item span {
+    word-break: break-word !important;
+  }
+
+  /* NAV FIX (MAIN ISSUE) */
+  .sidebar-nav ul {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8px !important;
+    padding: 0 !important;
+  }
+
+  .nav-link {
+    justify-content: center !important;
+    padding: 8px !important;
+    font-size: 0.75rem !important;
+    gap: 5px !important;
+    transform: none !important;
+  }
+
+  .nav-link span {
+    font-size: 0.75rem !important;
+  }
+
+  /* REMOVE ANIMATIONS THAT BREAK MOBILE */
+  .nav-link:hover,
+  .nav-link.active {
+    transform: none !important;
+  }
+
+  /* SOCIAL ICONS */
+  .social-links {
+    justify-content: center !important;
+    gap: 10px !important;
+  }
+
+  .social-link {
+    width: 35px !important;
+    height: 35px !important;
+  }
+
+  /* TEXT OVERFLOW FIX */
+  h1, h2, h3, p, span {
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+}
+
+/* =========================
+   FIX SPACE BEFORE SOCIAL ICONS
+========================= */
+
+/* Add spacing below contact section */
+.contact-summary {
+  margin-bottom: 25px;
+}
+
+/* Space above social icons */
+.sidebar-footer {
+  margin-top: 25px;
+}
+
+/* Improve social icons alignment */
+.social-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+/* Mobile extra spacing */
+@media (max-width: 768px) {
+  .contact-summary {
+    margin-bottom: 30px !important;
+  }
+
+  .sidebar-footer {
+    margin-top: 20px !important;
+  }
+
+  .social-links {
+    margin-top: 15px !important;
+    gap: 10px !important;
+  }
+}
+/* =========================
    LOADING SCREEN
 ========================= */
 .loading-screen {
